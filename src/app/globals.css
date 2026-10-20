@@ -1,0 +1,2563 @@
+
+@import "tailwindcss";
+
+:root {
+  --navy: #082a4a;
+  --blue: #0878e8;
+  --ink: #102033;
+  --muted: #637287;
+  --line: #e5edf5;
+  --soft: #f5f9fd;
+
+  --brand-navy: #082a4a;
+  --brand-blue: #0878e8;
+  --brand-border: #dce6f1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  width: min(1180px, 92%);
+  margin-inline: auto;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(#eaf2fa 1px, transparent 1px),
+    linear-gradient(90deg, #eaf2fa 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+
+.shadow-soft {
+  box-shadow: 0 18px 55px rgb(9 44 79 / 10%);
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #fff;
+}
+
+.blue-grad {
+  background: linear-gradient(135deg, #082a4a, #0878e8);
+}
+
+/* Shared animation utilities */
+
+.hero-enter {
+  animation: lds-hero-enter 700ms cubic-bezier(.2, .7, .2, 1) both;
+}
+
+.hero-enter-delay {
+  animation-delay: 140ms;
+}
+
+@keyframes lds-hero-enter {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(.2, .7, .2, 1);
+}
+
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.modern-card {
+  border: 1px solid #dce6f1;
+  border-radius: 6px;
+  background: #fff;
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.modern-card:hover {
+  transform: translateY(-4px);
+  border-color: #8bbfff;
+  box-shadow: 0 14px 30px rgb(8 42 74 / 9%);
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .scroll-reveal { opacity: 1; transform: none; }
+}
+
+
+
+/* About page animation and design */
+
+:root {
+  --brand-navy: #082a4a;
+  --brand-blue: #0878e8;
+  --brand-border: #dce6f1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.modern-section {
+  padding-top: 5.5rem;
+  padding-bottom: 5.5rem;
+}
+
+/* Hero entrance */
+.animate-hero {
+  animation: aboutHeroIn 750ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes aboutHeroIn {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition:
+    opacity 650ms ease,
+    transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Rectangular service cards */
+.modern-panel {
+  border: 1px solid var(--brand-border);
+  background: #fff;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.modern-panel:hover {
+  transform: translateY(-5px);
+  border-color: #9ccaff;
+  box-shadow: 0 14px 32px rgb(8 42 74 / 9%);
+}
+
+/* Button animations */
+.modern-button {
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease,
+    border-color 200ms ease;
+}
+
+.modern-button:hover {
+  transform: translateY(-2px);
+}
+
+/* Responsive spacing */
+@media (max-width: 767px) {
+  .modern-section {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+/* ==========================================
+   LAKSHMI DURGA SOLUTIONS - SERVICES PAGE
+   ========================================== */
+
+.services-hero {
+  isolation: isolate;
+}
+
+.services-hero-orb {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(1px);
+}
+
+.services-orb-one {
+  top: -110px;
+  right: -90px;
+  width: 340px;
+  height: 340px;
+  background: rgb(8 120 232 / 7%);
+}
+
+.services-orb-two {
+  bottom: -130px;
+  left: 30%;
+  width: 240px;
+  height: 240px;
+  background: rgb(8 120 232 / 5%);
+}
+
+.services-hero-visual {
+  position: relative;
+  padding: 0 0 35px 15px;
+}
+
+.services-hero-image {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 48% 48% 24px 24px / 32% 32% 24px 24px;
+  box-shadow: 0 24px 60px rgb(8 42 74 / 14%);
+}
+
+.services-floating-card {
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  max-width: calc(100% - 28px);
+  padding: 17px 20px;
+  border: 1px solid #e4edf7;
+  border-radius: 22px 22px 22px 5px;
+  background: white;
+  box-shadow: 0 15px 40px rgb(8 42 74 / 12%);
+}
+
+.services-image-badge {
+  position: absolute;
+  top: 24px;
+  right: -8px;
+  padding: 17px 20px;
+  border-radius: 20px 20px 5px 20px;
+  background: #082a4a;
+  box-shadow: 0 14px 30px rgb(8 42 74 / 18%);
+}
+
+/* Service cards */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.service-image-wrap {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  isolation: isolate;
+  background: #eaf2fb;
+  transition:
+    border-radius 350ms ease,
+    transform 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.service-card:hover .service-image-wrap {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 38px rgb(8 42 74 / 13%);
+}
+
+/* Six different image silhouettes */
+.service-image-one {
+  border-radius: 48% 48% 18px 18px / 38% 38% 18px 18px;
+}
+
+.service-image-two {
+  border-radius: 18px 65px 18px 65px;
+}
+
+.service-image-three {
+  border-radius: 65px 18px 65px 18px;
+}
+
+.service-image-four {
+  border-radius: 50% 18px 50% 18px;
+}
+
+.service-image-five {
+  border-radius: 18px 18px 85px 18px;
+}
+
+.service-image-six {
+  border-radius: 80px 18px 18px 80px;
+}
+
+.service-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.service-card:hover .service-card-image {
+  transform: scale(1.055);
+}
+
+.service-image-wrap::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    180deg,
+    rgb(8 42 74 / 10%) 0%,
+    transparent 40%,
+    rgb(8 42 74 / 35%) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
+.service-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  display: grid;
+  width: 43px;
+  height: 43px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 60%);
+  border-radius: 50%;
+  background: rgb(255 255 255 / 90%);
+  color: #082a4a;
+  font-size: 12px;
+  font-weight: 900;
+  backdrop-filter: blur(8px);
+}
+
+.service-icon {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  z-index: 2;
+  display: grid;
+  width: 49px;
+  height: 49px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 55%);
+  border-radius: 18px 18px 5px 18px;
+  background: #0878e8;
+  color: white;
+  box-shadow: 0 8px 24px rgb(8 42 74 / 18%);
+}
+
+.service-link {
+  width: 100%;
+  transition:
+    color 200ms ease,
+    gap 200ms ease;
+}
+
+.service-link:hover {
+  color: #055db7;
+}
+
+.service-link svg {
+  transition: transform 200ms ease;
+}
+
+.service-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* Process section */
+.services-process-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgb(8 120 232 / 25%),
+      transparent 35%
+    ),
+    #082a4a;
+}
+
+.process-card {
+  padding: 24px;
+  border: 1px solid rgb(255 255 255 / 13%);
+  border-radius: 24px 24px 24px 6px;
+  background: rgb(255 255 255 / 5%);
+  transition:
+    transform 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease;
+}
+
+.process-card:hover {
+  transform: translateY(-5px);
+  border-color: rgb(255 255 255 / 30%);
+  background: rgb(255 255 255 / 9%);
+}
+
+/* Monthly support plan */
+.services-plan-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.8fr);
+  gap: 32px;
+  align-items: center;
+  padding: 38px;
+  border: 1px solid #dce8f5;
+  border-radius: 36px 36px 36px 8px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgb(8 120 232 / 7%),
+      transparent 35%
+    ),
+    #fff;
+  box-shadow: 0 20px 60px rgb(8 42 74 / 6%);
+}
+
+.services-plan-art {
+  position: relative;
+  display: grid;
+  min-height: 285px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 48% 48% 24px 24px / 38% 38% 24px 24px;
+  background: #edf5ff;
+}
+
+.plan-art-circle {
+  position: absolute;
+  border: 1px solid rgb(8 120 232 / 15%);
+  border-radius: 50%;
+}
+
+.plan-circle-one {
+  width: 280px;
+  height: 280px;
+}
+
+.plan-circle-two {
+  width: 220px;
+  height: 220px;
+}
+
+.plan-art-card {
+  position: relative;
+  z-index: 1;
+  width: min(85%, 320px);
+  padding: 24px;
+  border: 1px solid #e1eaf4;
+  border-radius: 24px 24px 24px 6px;
+  background: white;
+  box-shadow: 0 18px 40px rgb(8 42 74 / 10%);
+}
+
+/* Final CTA */
+.services-final-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 42px;
+  border-radius: 36px 36px 36px 8px;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgb(8 120 232 / 38%),
+      transparent 40%
+    ),
+    #082a4a;
+}
+
+.services-final-cta::after {
+  position: absolute;
+  top: -100px;
+  right: -70px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 35px rgb(255 255 255 / 3%),
+    0 0 0 70px rgb(255 255 255 / 2%);
+  content: "";
+  pointer-events: none;
+}
+
+.services-whatsapp {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 50;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 50% 50% 50% 14px;
+  background: #0878e8;
+  color: white;
+  box-shadow: 0 10px 30px rgb(8 42 74 / 24%);
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
+}
+
+.services-whatsapp:hover {
+  transform: translateY(-4px);
+  background: #0668ca;
+}
+
+@media (min-width: 1024px) {
+  .services-hero-image {
+    height: 430px;
+  }
+}
+
+@media (max-width: 767px) {
+  .services-hero-image {
+    height: 285px;
+  }
+
+  .services-image-badge {
+    top: 12px;
+    right: -3px;
+    padding: 12px 14px;
+  }
+
+  .services-floating-card {
+    padding: 13px;
+  }
+
+  .service-image-wrap {
+    height: 240px;
+  }
+
+  .services-plan-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 26px;
+    padding: 24px;
+    border-radius: 28px 28px 28px 6px;
+  }
+
+  .services-plan-art {
+    min-height: 260px;
+  }
+
+  .services-final-cta {
+    padding: 28px 23px;
+    border-radius: 28px 28px 28px 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card-image,
+  .service-image-wrap,
+  .process-card,
+  .services-whatsapp {
+    transition: none !important;
+  }
+
+  .service-card:hover .service-card-image,
+  .service-card:hover .service-image-wrap,
+  .process-card:hover,
+  .services-whatsapp:hover {
+    transform: none;
+  }
+}
+
+/* Services page footer */
+
+.services-footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 0% 0%,
+      rgb(8 120 232 / 18%),
+      transparent 32%
+    ),
+    #061e35;
+  border-radius: 42px 42px 0 0;
+}
+
+.footer-link {
+  color: #cbd5e1;
+  transition: color 180ms ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .services-footer {
+    border-radius: 28px 28px 0 0;
+  }
+}
+
+
+
+/* =====================================
+   PRICING PAGE - CORPORATE DESIGN
+===================================== */
+
+.pricing-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      ellipse at 85% 10%,
+      rgb(8 120 232 / 10%),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f5f9fd 0%, #fff 58%, #edf5ff 100%);
+}
+
+.pricing-hero-orb {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgb(8 120 232 / 9%);
+  border-radius: 50%;
+}
+
+.pricing-hero-orb-one {
+  top: -180px;
+  right: -90px;
+  width: 440px;
+  height: 440px;
+}
+
+.pricing-hero-orb-two {
+  top: -110px;
+  right: -25px;
+  width: 310px;
+  height: 310px;
+}
+
+.pricing-gradient-text {
+  color: #0878e8;
+  background: linear-gradient(100deg, #0878e8, #39a1ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-enter {
+  animation: pricingEnter 700ms ease both;
+}
+
+.pricing-summary-panel {
+  isolation: isolate;
+  animation: pricingEnter 850ms ease both;
+}
+
+/* Hero photo panel */
+
+.pricing-visual {
+  min-height: 460px;
+  margin: 12px 0 34px;
+  border-radius: 34px;
+}
+
+.pricing-visual-image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 34px;
+  background: #dbeafe;
+  box-shadow: 0 25px 65px rgb(8 42 74 / 16%);
+}
+
+.pricing-visual-image img {
+  transition: transform 700ms ease;
+}
+
+.pricing-visual:hover .pricing-visual-image img {
+  transform: scale(1.035);
+}
+
+.pricing-image-shade {
+  position: absolute;
+  inset: 0;
+  border-radius: 34px;
+  background: linear-gradient(
+    0deg,
+    rgb(3 20 38 / 88%) 0%,
+    rgb(3 20 38 / 38%) 48%,
+    rgb(3 20 38 / 5%) 100%
+  );
+}
+
+.pricing-image-caption {
+  position: absolute;
+  right: 28px;
+  bottom: 100px;
+  left: 28px;
+  z-index: 1;
+}
+
+.pricing-floating-card {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: -28px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px;
+  border: 1px solid rgb(255 255 255 / 80%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 18px 45px rgb(8 42 74 / 17%);
+  backdrop-filter: blur(14px);
+}
+
+.pricing-summary-glow {
+  position: absolute;
+  z-index: -1;
+  inset: 12% 5%;
+  border-radius: 50%;
+  background: rgb(8 120 232 / 16%);
+  filter: blur(50px);
+}
+
+/* Main CTA button */
+
+.pricing-primary-button {
+  box-shadow: 0 10px 24px rgb(8 120 232 / 20%);
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.pricing-primary-button:hover {
+  transform: translateY(-2px);
+  background: #0668ca;
+  box-shadow: 0 14px 30px rgb(8 120 232 / 26%);
+}
+
+/* Plan cards */
+
+.pricing-plan-card {
+  min-width: 0;
+  transition:
+    transform 250ms ease,
+    box-shadow 250ms ease,
+    border-color 250ms ease;
+}
+
+.pricing-plan-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 45px rgb(8 42 74 / 10%);
+}
+
+.pricing-plan-featured {
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgb(8 120 232 / 24%),
+      transparent 35%
+    ),
+    #082a4a;
+}
+
+.pricing-plan-featured:hover {
+  box-shadow: 0 25px 55px rgb(8 42 74 / 20%);
+}
+
+/* Plan card photos */
+
+.pricing-card-image {
+  position: relative;
+  height: 190px;
+  margin: -32px -32px 26px;
+  overflow: hidden;
+  border-radius: 24px 24px 16px 16px;
+  background: #eaf2fb;
+}
+
+.pricing-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 600ms ease;
+}
+
+.pricing-plan-card:hover .pricing-card-image img {
+  transform: scale(1.06);
+}
+
+.pricing-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgb(4 28 52 / 68%),
+    transparent 70%
+  );
+}
+
+.pricing-card-image-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+/* Process cards */
+
+.pricing-step-card {
+  position: relative;
+  overflow: hidden;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #fff;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.pricing-step-card:hover {
+  transform: translateY(-4px);
+  border-color: #bfdbfe;
+  box-shadow: 0 18px 38px rgb(8 42 74 / 7%);
+}
+
+.pricing-step-number {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  color: #dbeafe;
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+/* FAQ accordion */
+
+.pricing-faq {
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.pricing-faq:hover,
+.pricing-faq[open] {
+  border-color: #bfdbfe;
+  box-shadow: 0 10px 30px rgb(8 42 74 / 5%);
+}
+
+.pricing-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.pricing-faq-icon {
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+.pricing-faq[open] .pricing-faq-icon {
+  transform: rotate(45deg);
+  background: #dbeafe;
+}
+
+/* Final CTA */
+
+.pricing-final-cta {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 100% 0%,
+      rgb(8 120 232 / 30%),
+      transparent 38%
+    ),
+    linear-gradient(120deg, #061e35, #082a4a 65%, #0a3964);
+  box-shadow: 0 24px 60px rgb(8 42 74 / 13%);
+}
+
+.pricing-final-cta::after {
+  position: absolute;
+  right: -65px;
+  bottom: -160px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+/* Entrance animation */
+
+@keyframes pricingEnter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Footer styles - reuse if already present */
+
+.services-footer {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 0% 0%, rgb(8 120 232 / 18%), transparent 32%),
+    #061e35;
+  border-radius: 42px 42px 0 0;
+}
+
+.footer-link {
+  display: inline-block;
+  color: #cbd5e1;
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+  transform: translateX(3px);
+}
+
+.footer-link:focus-visible {
+  outline: 2px solid #60a5fa;
+  outline-offset: 4px;
+  border-radius: 3px;
+}
+
+/* Mobile */
+
+@media (max-width: 640px) {
+  .pricing-hero-orb-one {
+    top: -100px;
+    right: -220px;
+    width: 330px;
+    height: 330px;
+  }
+
+  .pricing-hero-orb-two {
+    top: -60px;
+    right: -180px;
+    width: 240px;
+    height: 240px;
+  }
+
+  .pricing-visual {
+    min-height: 390px;
+    margin: 4px 0 30px;
+  }
+
+  .pricing-visual-image,
+  .pricing-image-shade {
+    border-radius: 24px;
+  }
+
+  .pricing-image-caption {
+    right: 20px;
+    bottom: 105px;
+    left: 20px;
+  }
+
+  .pricing-floating-card {
+    right: 10px;
+    bottom: -24px;
+    left: 10px;
+    gap: 9px;
+    padding: 12px;
+  }
+
+  .pricing-card-image {
+    height: 170px;
+    margin-right: -24px;
+    margin-left: -24px;
+  }
+
+  .pricing-plan-card:hover,
+  .pricing-step-card:hover {
+    transform: none;
+  }
+
+  .pricing-step-card {
+    padding: 24px;
+  }
+
+  .pricing-final-cta {
+    border-radius: 24px;
+  }
+
+  .services-footer {
+    border-radius: 28px 28px 0 0;
+  }
+
+  .services-footer .footer-link:hover {
+    transform: none;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-enter,
+  .pricing-summary-panel {
+    animation: none;
+  }
+
+  .pricing-plan-card,
+  .pricing-step-card,
+  .pricing-primary-button,
+  .pricing-faq-icon,
+  .pricing-visual-image img,
+  .pricing-card-image img {
+    transition: none;
+  }
+
+  .pricing-plan-card:hover,
+  .pricing-step-card:hover,
+  .pricing-primary-button:hover {
+    transform: none;
+  }
+
+  .services-footer *,
+  .services-footer *::before,
+  .services-footer *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+
+
+/* =========================================
+   CONTACT PAGE - PREMIUM DESIGN
+========================================= */
+
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 88% 18%, rgb(8 120 232 / 10%), transparent 35%),
+    linear-gradient(135deg, #f5f9fd 0%, #ffffff 56%, #eef5ff 100%);
+}
+
+.contact-orb {
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid rgb(8 120 232 / 9%);
+  border-radius: 50%;
+}
+
+.contact-orb-one {
+  top: -175px;
+  right: -95px;
+  width: 440px;
+  height: 440px;
+}
+
+.contact-orb-two {
+  top: -105px;
+  right: -25px;
+  width: 300px;
+  height: 300px;
+}
+
+.contact-gradient {
+  color: #0878e8;
+  background: linear-gradient(100deg, #0878e8, #43a5ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-hero-copy {
+  animation: contactFadeUp 700ms ease both;
+}
+
+/* Hero image composition */
+
+.contact-hero-visual {
+  position: relative;
+  min-height: 480px;
+  margin: 10px 0 30px;
+  isolation: isolate;
+  animation: contactFadeUp 850ms ease both;
+}
+
+.contact-image-backdrop {
+  position: absolute;
+  z-index: -1;
+  top: 25px;
+  right: -14px;
+  bottom: -8px;
+  left: 25px;
+  border-radius: 48% 30% 38% 28%;
+  background: linear-gradient(135deg, #0878e8, #b9dcff);
+  transform: rotate(3deg);
+}
+
+.contact-hero-image {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 5px solid #fff;
+  border-radius: 30% 38% 24% 34%;
+  background: #dbeafe;
+  box-shadow: 0 28px 65px rgb(8 42 74 / 16%);
+}
+
+.contact-hero-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 800ms ease;
+}
+
+.contact-hero-visual:hover .contact-hero-image img {
+  transform: scale(1.045);
+}
+
+.contact-image-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: 30% 38% 24% 34%;
+  background: linear-gradient(
+    0deg,
+    rgb(3 20 38 / 88%) 0%,
+    rgb(3 20 38 / 40%) 43%,
+    rgb(3 20 38 / 0%) 76%
+  );
+  pointer-events: none;
+}
+
+.contact-image-message {
+  position: absolute;
+  right: 28px;
+  bottom: 58px;
+  left: 28px;
+  z-index: 2;
+}
+
+.contact-floating-note {
+  position: absolute;
+  z-index: 3;
+  right: -12px;
+  bottom: -22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: min(360px, calc(100% - 20px));
+  padding: 16px;
+  border: 1px solid rgb(255 255 255 / 85%);
+  border-radius: 20px;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 18px 45px rgb(8 42 74 / 17%);
+  backdrop-filter: blur(14px);
+  animation: contactFloat 4s ease-in-out infinite;
+}
+
+/* Buttons */
+
+.contact-primary-button {
+  box-shadow: 0 10px 24px rgb(8 120 232 / 20%);
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-primary-button:hover {
+  transform: translateY(-2px);
+  background: #0668ca;
+  box-shadow: 0 14px 30px rgb(8 120 232 / 26%);
+}
+
+/* Contact detail cards */
+
+.contact-detail-card {
+  padding: 27px;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  background: #fff;
+  box-shadow: 0 8px 25px rgb(8 42 74 / 3%);
+  animation: contactFadeUp 600ms ease both;
+  transition:
+    transform 250ms ease,
+    border-color 250ms ease,
+    box-shadow 250ms ease;
+}
+
+.contact-detail-card:hover {
+  transform: translateY(-6px);
+  border-color: #bfdbfe;
+  box-shadow: 0 22px 42px rgb(8 42 74 / 8%);
+}
+
+.contact-detail-link {
+  transition:
+    gap 200ms ease,
+    color 200ms ease;
+}
+
+.contact-detail-link:hover {
+  gap: 10px;
+  color: #0878e8;
+}
+
+/* Inquiry form section */
+
+.contact-form-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 0% 35%, rgb(8 120 232 / 7%), transparent 30%),
+    #f5f9fd;
+}
+
+.contact-form-card {
+  padding: 25px;
+  border: 1px solid #e5edf6;
+  border-radius: 28px;
+  background: #fff;
+  box-shadow: 0 24px 70px rgb(8 42 74 / 8%);
+  animation: contactFadeUp 700ms ease both;
+}
+
+.contact-field-label {
+  display: block;
+  margin-bottom: 9px;
+  color: #082a4a;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.contact-field-label span {
+  color: #0878e8;
+}
+
+.contact-field {
+  display: block;
+  width: 100%;
+  min-height: 52px;
+  border: 1px solid #dbe4ef;
+  border-radius: 13px;
+  background-color: #fff;
+  padding: 13px 14px;
+  color: #082a4a;
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.contact-field::placeholder {
+  color: #94a3b8;
+}
+
+.contact-field:hover {
+  border-color: #bfdbfe;
+}
+
+.contact-field:focus {
+  border-color: #0878e8;
+  box-shadow: 0 0 0 4px rgb(8 120 232 / 10%);
+}
+
+.contact-field:focus-visible {
+  outline: none;
+}
+
+.contact-field select,
+select.contact-field {
+  cursor: pointer;
+}
+
+.contact-textarea {
+  min-height: 140px;
+  resize: vertical;
+  line-height: 1.7;
+}
+
+.contact-submit-button {
+  display: inline-flex;
+  width: 100%;
+  min-height: 54px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 0;
+  border-radius: 14px;
+  background: #0878e8;
+  padding: 14px 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgb(8 120 232 / 18%);
+  transition:
+    transform 200ms ease,
+    background 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-submit-button:hover {
+  transform: translateY(-2px);
+  background: #0668ca;
+  box-shadow: 0 14px 28px rgb(8 120 232 / 24%);
+}
+
+.contact-submit-button:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+/* FAQ */
+
+.contact-faq {
+  overflow: hidden;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #fff;
+  padding: 20px 22px;
+  transition:
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.contact-faq:hover,
+.contact-faq[open] {
+  border-color: #bfdbfe;
+  box-shadow: 0 10px 28px rgb(8 42 74 / 5%);
+}
+
+.contact-faq summary {
+  display: flex;
+  cursor: pointer;
+  list-style: none;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: #082a4a;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.contact-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.contact-faq-plus {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #0878e8;
+  font-size: 22px;
+  font-weight: 500;
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+.contact-faq[open] .contact-faq-plus {
+  transform: rotate(45deg);
+  background: #dbeafe;
+}
+
+.contact-faq > p {
+  margin-top: 15px;
+  padding-right: 25px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+/* Final CTA */
+
+.contact-final-cta {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 100% 0%, rgb(8 120 232 / 30%), transparent 38%),
+    linear-gradient(120deg, #061e35, #082a4a 65%, #0a3964);
+  box-shadow: 0 24px 60px rgb(8 42 74 / 13%);
+}
+
+.contact-final-cta::after {
+  position: absolute;
+  right: -65px;
+  bottom: -160px;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+/* Floating WhatsApp */
+
+.contact-whatsapp-float {
+  position: fixed;
+  z-index: 50;
+  right: 20px;
+  bottom: 20px;
+  display: grid;
+  width: 56px;
+  height: 56px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 50%;
+  background: #0878e8;
+  color: #fff;
+  box-shadow: 0 12px 28px rgb(8 42 74 / 22%);
+  transition:
+    transform 200ms ease,
+    background 200ms ease;
+}
+
+.contact-whatsapp-float:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: #0668ca;
+}
+
+/* Animations */
+
+@keyframes contactFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes contactFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Tablet and mobile */
+
+@media (max-width: 1023px) {
+  .contact-hero-visual {
+    max-width: 650px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .contact-floating-note {
+    right: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-orb-one {
+    top: -100px;
+    right: -220px;
+    width: 330px;
+    height: 330px;
+  }
+
+  .contact-orb-two {
+    top: -60px;
+    right: -180px;
+    width: 240px;
+    height: 240px;
+  }
+
+  .contact-hero-visual {
+    min-height: 370px;
+    margin-top: 0;
+    margin-bottom: 25px;
+  }
+
+  .contact-image-backdrop {
+    top: 15px;
+    right: -4px;
+    bottom: -5px;
+    left: 12px;
+    border-radius: 38% 25% 28% 23%;
+  }
+
+  .contact-hero-image {
+    border-width: 4px;
+    border-radius: 25% 30% 20% 26%;
+  }
+
+  .contact-image-gradient {
+    border-radius: 25% 30% 20% 26%;
+  }
+
+  .contact-image-message {
+    right: 18px;
+    bottom: 40px;
+    left: 18px;
+  }
+
+  .contact-floating-note {
+    right: -2px;
+    bottom: -20px;
+    width: calc(100% - 12px);
+    gap: 9px;
+    padding: 12px;
+    border-radius: 16px;
+    animation: none;
+  }
+
+  .contact-detail-card {
+    padding: 23px;
+  }
+
+  .contact-detail-card:hover {
+    transform: none;
+  }
+
+  .contact-form-card {
+    padding: 21px;
+    border-radius: 22px;
+  }
+
+  .contact-faq {
+    padding: 17px;
+  }
+
+  .contact-faq summary {
+    font-size: 14px;
+  }
+
+  .contact-final-cta {
+    border-radius: 24px;
+  }
+
+  .contact-whatsapp-float {
+    right: 15px;
+    bottom: 15px;
+    width: 52px;
+    height: 52px;
+  }
+
+  .services-footer {
+    border-radius: 28px 28px 0 0;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-hero-copy,
+  .contact-hero-visual,
+  .contact-detail-card,
+  .contact-form-card {
+    animation: none;
+  }
+
+  .contact-floating-note {
+    animation: none;
+  }
+
+  .contact-page *,
+  .contact-page *::before,
+  .contact-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .contact-detail-card:hover,
+  .contact-primary-button:hover,
+  .contact-submit-button:hover,
+  .contact-whatsapp-float:hover {
+    transform: none;
+  }
+}
+
+
+/* ==========================================
+   CONTACT PAGE V2 — ORGANIC / PREMIUM DESIGN
+   Append to the bottom of globals.css
+========================================== */
+
+.contact-page {
+  --contact-navy: #082a4a;
+  --contact-blue: #0878e8;
+  --contact-pale: #eff6ff;
+}
+
+/* 1. HERO: editorial split with curved image */
+
+.contact-hero {
+  background:
+    radial-gradient(ellipse at 10% 0%, #e3f0ff 0%, transparent 38%),
+    linear-gradient(135deg, #f8fbff 0%, #fff 52%, #edf5ff 100%);
+}
+
+.contact-hero .contact-hero-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.contact-hero h1 {
+  letter-spacing: -0.055em;
+}
+
+.contact-hero-visual {
+  min-height: 510px;
+  margin: 0 8px 30px 0;
+}
+
+/* Replace the old rotated backdrop with an organic shape */
+.contact-image-backdrop {
+  top: 20px;
+  right: -14px;
+  bottom: -12px;
+  left: 34px;
+  border-radius: 48% 20% 42% 18% / 25% 38% 20% 45%;
+  transform: rotate(4deg);
+  background: linear-gradient(145deg, #80bdff, #0878e8 65%, #082a4a);
+}
+
+.contact-hero-image {
+  inset: 0 16px 8px 0;
+  overflow: hidden;
+  border: 6px solid #fff;
+  border-radius: 23% 37% 17% 32% / 20% 25% 35% 30%;
+  box-shadow:
+    0 30px 70px rgb(8 42 74 / 16%),
+    0 3px 12px rgb(8 42 74 / 5%);
+}
+
+.contact-hero-image img {
+  object-position: center;
+  transform: scale(1.01);
+  filter: saturate(0.96);
+}
+
+.contact-hero-visual:hover .contact-hero-image img {
+  transform: scale(1.055);
+}
+
+.contact-image-gradient {
+  inset: 0 16px 8px 0;
+  border-radius: 23% 37% 17% 32% / 20% 25% 35% 30%;
+  background: linear-gradient(
+    180deg,
+    rgb(4 23 43 / 0%) 25%,
+    rgb(4 23 43 / 18%) 48%,
+    rgb(4 23 43 / 88%) 100%
+  );
+}
+
+.contact-image-message {
+  right: 40px;
+  bottom: 62px;
+  left: 30px;
+}
+
+.contact-floating-note {
+  right: -10px;
+  bottom: -20px;
+  width: min(350px, 90%);
+  border-radius: 18px 18px 18px 5px;
+  box-shadow: 0 22px 55px rgb(8 42 74 / 18%);
+}
+
+/* Add a small decorative visual marker */
+.contact-hero-visual::after {
+  position: absolute;
+  z-index: 2;
+  top: 34px;
+  left: -18px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid rgb(8 120 232 / 35%);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+/* 2. Contact details: staggered editorial cards */
+
+.contact-page > section:nth-of-type(2) {
+  position: relative;
+  background: #fff;
+}
+
+.contact-detail-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 270px;
+  padding: 30px;
+  border: 1px solid #e4edf7;
+  border-radius: 28px 28px 28px 8px;
+  background:
+    linear-gradient(155deg, #fff 55%, #f4f8ff 100%);
+  box-shadow: 0 8px 28px rgb(8 42 74 / 4%);
+}
+
+.contact-detail-card::before {
+  position: absolute;
+  top: -46px;
+  right: -46px;
+  width: 135px;
+  height: 135px;
+  border: 1px solid rgb(8 120 232 / 10%);
+  border-radius: 45% 55% 60% 40%;
+  content: "";
+  transition: transform 350ms ease;
+}
+
+.contact-detail-card::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #0878e8, #8cc7ff);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 300ms ease;
+}
+
+.contact-detail-card:hover {
+  transform: translateY(-7px);
+  border-color: #c8e0ff;
+  box-shadow: 0 22px 50px rgb(8 42 74 / 9%);
+}
+
+.contact-detail-card:hover::before {
+  transform: scale(1.2) rotate(15deg);
+}
+
+.contact-detail-card:hover::after {
+  transform: scaleX(1);
+}
+
+.contact-detail-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-detail-card > div:first-child > span {
+  width: 56px;
+  height: 56px;
+  border-radius: 20px 20px 20px 7px;
+  box-shadow: inset 0 0 0 1px rgb(8 120 232 / 6%);
+}
+
+/* 3. Form section: two-tone layout */
+
+.contact-form-section {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(8 120 232 / 9%), transparent 32%),
+    linear-gradient(180deg, #f1f6fc, #f8fbff);
+}
+
+.contact-form-section > div {
+  align-items: stretch;
+}
+
+.contact-form-section > div > div:first-child {
+  padding-top: 16px;
+}
+
+.contact-form-section h2 {
+  letter-spacing: -0.045em;
+}
+
+.contact-form-section .contact-form-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 90%);
+  border-radius: 30px 30px 30px 9px;
+  padding: clamp(22px, 4vw, 38px);
+  background: rgb(255 255 255 / 96%);
+  box-shadow:
+    0 30px 80px rgb(8 42 74 / 9%),
+    0 2px 10px rgb(8 42 74 / 3%);
+}
+
+.contact-form-card::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #0878e8, #8bc8ff, #d9ebff);
+  content: "";
+}
+
+.contact-field {
+  min-height: 54px;
+  border-radius: 12px;
+  background: #f9fbfe;
+}
+
+.contact-field:hover {
+  background: #fff;
+}
+
+.contact-field:focus {
+  background: #fff;
+}
+
+.contact-textarea {
+  min-height: 150px;
+}
+
+.contact-submit-button {
+  min-height: 58px;
+  border-radius: 13px 13px 13px 5px;
+  background: linear-gradient(105deg, #0878e8, #086bd0);
+}
+
+/* 4. FAQ: wider accordion rows */
+
+.contact-page > section:nth-of-type(4) {
+  background: #fff;
+}
+
+.contact-faq {
+  border-radius: 18px 18px 18px 6px;
+  padding: 22px 24px;
+  background: linear-gradient(115deg, #fff, #fbfdff);
+}
+
+.contact-faq summary {
+  line-height: 1.6;
+}
+
+.contact-faq[open] {
+  background: #f8fbff;
+}
+
+.contact-faq > p {
+  max-width: 680px;
+  line-height: 1.85;
+}
+
+/* 5. CTA: layered abstract decoration */
+
+.contact-final-cta {
+  border-radius: 32px 32px 32px 8px;
+  background:
+    radial-gradient(ellipse at 90% 10%, rgb(8 120 232 / 35%), transparent 38%),
+    linear-gradient(115deg, #061e35 0%, #082a4a 60%, #0c3f70 100%);
+}
+
+.contact-final-cta::before {
+  position: absolute;
+  top: -90px;
+  right: 17%;
+  width: 210px;
+  height: 210px;
+  border: 1px solid rgb(255 255 255 / 12%);
+  border-radius: 36% 64% 55% 45%;
+  content: "";
+  transform: rotate(35deg);
+  pointer-events: none;
+}
+
+.contact-final-cta::after {
+  right: -85px;
+  bottom: -175px;
+  width: 350px;
+  height: 350px;
+  border-radius: 42% 58% 60% 40%;
+  transform: rotate(-20deg);
+}
+
+/* 6. Footer: rounded top corners, more separation */
+
+.contact-page .services-footer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 38px 38px 0 0;
+  background: #061b30;
+}
+
+.contact-page .services-footer::before {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  left: 10%;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgb(125 185 255 / 50%),
+    transparent
+  );
+  content: "";
+}
+
+/* 7. Reveal cards gently without harsh movement */
+
+@keyframes contactSectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.contact-detail-card {
+  animation: contactSectionReveal 650ms ease both;
+}
+
+.contact-detail-card:nth-child(2) {
+  animation-delay: 100ms;
+}
+
+.contact-detail-card:nth-child(3) {
+  animation-delay: 200ms;
+}
+
+/* 8. Tablet and mobile refinements */
+
+@media (max-width: 1023px) {
+  .contact-hero-visual {
+    max-width: 650px;
+    min-height: 460px;
+    margin: 0 auto 30px;
+  }
+
+  .contact-floating-note {
+    right: 0;
+  }
+
+  .contact-form-section > div > div:first-child {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-hero-visual {
+    min-height: 355px;
+    margin: 0 4px 24px 0;
+  }
+
+  .contact-image-backdrop {
+    top: 14px;
+    right: -4px;
+    bottom: -7px;
+    left: 15px;
+    border-radius: 42% 20% 35% 18% / 20% 28% 23% 36%;
+  }
+
+  .contact-hero-image {
+    inset: 0 9px 6px 0;
+    border-width: 4px;
+    border-radius: 23% 31% 17% 28% / 19% 23% 30% 27%;
+  }
+
+  .contact-image-gradient {
+    inset: 0 9px 6px 0;
+    border-radius: 23% 31% 17% 28% / 19% 23% 30% 27%;
+  }
+
+  .contact-image-message {
+    right: 22px;
+    bottom: 37px;
+    left: 19px;
+  }
+
+  .contact-hero-visual::after {
+    top: 20px;
+    left: -8px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .contact-floating-note {
+    right: -2px;
+    bottom: -18px;
+    width: min(320px, 92%);
+    padding: 11px;
+  }
+
+  .contact-detail-card {
+    min-height: auto;
+    padding: 24px;
+    border-radius: 23px 23px 23px 7px;
+  }
+
+  .contact-detail-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .contact-form-section .contact-form-card {
+    padding: 22px 18px;
+    border-radius: 23px 23px 23px 7px;
+  }
+
+  .contact-faq {
+    padding: 18px;
+  }
+
+  .contact-final-cta {
+    border-radius: 25px 25px 25px 7px;
+  }
+
+  .contact-page .services-footer {
+    border-radius: 27px 27px 0 0;
+  }
+
+  .contact-whatsapp-float {
+    right: 15px;
+    bottom: 15px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .contact-detail-card,
+  .contact-hero-copy,
+  .contact-hero-visual,
+  .contact-form-card,
+  .contact-floating-note {
+    animation: none !important;
+  }
+
+  .contact-page *,
+  .contact-page *::before,
+  .contact-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =========================================
+   LAKSHMI DURGA SOLUTIONS - VISUAL STYLES
+   ========================================= */
+
+.hero-visual,
+.about-visual {
+  isolation: isolate;
+}
+
+.hero-photo-frame {
+  overflow: hidden;
+  border: 6px solid #fff;
+  border-radius: 44% 56% 22px 22px / 27% 27% 22px 22px;
+  box-shadow: 0 24px 70px rgba(8, 42, 74, 0.14);
+  transform: rotate(-1deg);
+  transition:
+    transform 350ms ease,
+    box-shadow 350ms ease;
+}
+
+.hero-photo {
+  display: block;
+  border-radius: inherit;
+  transition: transform 600ms ease;
+}
+
+.hero-visual:hover .hero-photo-frame {
+  transform: rotate(0deg) translateY(-3px);
+  box-shadow: 0 30px 80px rgba(8, 42, 74, 0.18);
+}
+
+.hero-visual:hover .hero-photo {
+  transform: scale(1.04);
+}
+
+.hero-orbit {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.hero-orbit-one {
+  top: -28px;
+  left: -24px;
+  width: 155px;
+  height: 155px;
+  background: #dceeff;
+}
+
+.hero-orbit-two {
+  right: -18px;
+  bottom: 28px;
+  width: 110px;
+  height: 110px;
+  border: 18px solid #e9f4ff;
+}
+
+.hero-floating-card,
+.hero-trust-badge,
+.about-stat-card {
+  animation: lds-float-in 650ms ease both;
+}
+
+.hero-trust-badge {
+  animation-delay: 120ms;
+}
+
+.about-photo-frame {
+  overflow: hidden;
+  border: 6px solid #fff;
+  border-radius: 24px 100px 24px 100px;
+  box-shadow: 0 22px 60px rgba(8, 42, 74, 0.13);
+  transition:
+    border-radius 350ms ease,
+    transform 350ms ease;
+}
+
+.about-photo {
+  display: block;
+  border-radius: inherit;
+  transition: transform 600ms ease;
+}
+
+.about-visual:hover .about-photo-frame {
+  transform: translateY(-3px);
+  border-radius: 60px 35px 60px 35px;
+}
+
+.about-visual:hover .about-photo {
+  transform: scale(1.04);
+}
+
+.about-decorative-shape {
+  position: absolute;
+  z-index: -1;
+  top: -18px;
+  right: -15px;
+  width: 68%;
+  height: 75%;
+  border-radius: 45% 55% 40% 60%;
+  background: #e8f3ff;
+}
+
+.service-card,
+.pricing-card,
+.contact-info-card {
+  will-change: auto;
+}
+
+.cta-panel {
+  box-shadow: 0 25px 65px rgba(8, 42, 74, 0.12);
+}
+
+.whatsapp-float {
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.3);
+}
+
+@keyframes lds-float-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-orbit-one {
+    top: -15px;
+    left: -8px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .hero-orbit-two {
+    right: -8px;
+    width: 70px;
+    height: 70px;
+    border-width: 12px;
+  }
+
+  .about-decorative-shape {
+    right: -5px;
+  }
+
+  .about-photo-frame {
+    border-radius: 22px 65px 22px 65px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-photo-frame,
+  .hero-photo,
+  .about-photo-frame,
+  .about-photo,
+  .hero-floating-card,
+  .hero-trust-badge,
+  .about-stat-card {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+
+
+/* ==========================================
+   LAKSHMI DURGA SOLUTIONS
+   GLOBAL GREEN BRAND THEME
+   Replace the old GREEN BRAND THEME OVERRIDES
+   block at the bottom of globals.css
+========================================== */
+
+:root {
+  --navy: #082a4a;
+  --blue: #15803d;
+  --ink: #102033;
+  --muted: #637287;
+  --line: #e5edf5;
+  --soft: #f0fdf4;
+
+  --brand-navy: #082a4a;
+  --brand-blue: #15803d;
+  --brand-border: #dcfce7;
+
+  --green: #15803d;
+  --green-dark: #166534;
+  --green-light: #22c55e;
+  --green-pale: #f0fdf4;
+  --green-border: #bbf7d0;
+}
+
+/* Green gradient headings */
+.pricing-gradient-text,
+.contact-gradient {
+  color: var(--green);
+  background: linear-gradient(100deg, #166534, #22c55e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Services page */
+.services-orb-one {
+  background: rgb(34 197 94 / 8%);
+}
+
+.services-orb-two {
+  background: rgb(34 197 94 / 6%);
+}
+
+.service-icon {
+  background: var(--green);
+}
+
+.service-link:hover {
+  color: var(--green-dark);
+}
+
+.services-process-section {
+  background:
+    radial-gradient(circle at 100% 0%, rgb(34 197 94 / 22%), transparent 35%),
+    var(--navy);
+}
+
+.services-plan-panel {
+  background:
+    radial-gradient(circle at 100% 0%, rgb(34 197 94 / 8%), transparent 35%),
+    #fff;
+  border-color: var(--green-border);
+}
+
+.services-plan-art,
+.service-image-wrap {
+  background: var(--green-pale);
+}
+
+.plan-art-circle {
+  border-color: rgb(34 197 94 / 20%);
+}
+
+.services-final-cta {
+  background:
+    radial-gradient(circle at 100% 0%, rgb(34 197 94 / 28%), transparent 40%),
+    var(--navy);
+}
+
+/* Pricing page */
+.pricing-hero {
+  background:
+    radial-gradient(ellipse at 85% 10%, rgb(34 197 94 / 10%), transparent 35%),
+    linear-gradient(135deg, #f0fdf4, #fff 58%, #ecfdf5);
+}
+
+.pricing-hero-orb {
+  border-color: rgb(34 197 94 / 14%);
+}
+
+.pricing-summary-glow {
+  background: rgb(34 197 94 / 16%);
+}
+
+.pricing-primary-button {
+  background: var(--green);
+  box-shadow: 0 10px 24px rgb(21 128 61 / 20%);
+}
+
+.pricing-primary-button:hover {
+  background: var(--green-dark);
+  box-shadow: 0 14px 30px rgb(21 128 61 / 25%);
+}
+
+.pricing-plan-featured {
+  background:
+    radial-gradient(circle at 100% 0%, rgb(34 197 94 / 22%), transparent 35%),
+    var(--navy);
+}
+
+.pricing-step-card:hover,
+.pricing-faq:hover,
+.pricing-faq[open] {
+  border-color: var(--green-border);
+}
+
+.pricing-step-number {
+  color: #dcfce7;
+}
+
+.pricing-faq[open] .pricing-faq-icon {
+  background: #dcfce7;
+}
+
+.pricing-final-cta {
+  background:
+    radial-gradient(circle at 100% 0%, rgb(34 197 94 / 25%), transparent 38%),
+    linear-gradient(120deg, #061e35, #082a4a 65%, #0a3964);
+}
+
+/* Contact page */
+.contact-page {
+  --contact-blue: var(--green);
+  --contact-pale: var(--green-pale);
+}
+
+.contact-hero {
+  background:
+    radial-gradient(ellipse at 10% 0%, #dcfce7 0%, transparent 38%),
+    linear-gradient(135deg, #f0fdf4, #fff 52%, #ecfdf5);
+}
+
+.contact-orb {
+  border-color: rgb(34 197 94 / 14%);
+}
+
+.contact-image-backdrop {
+  background: linear-gradient(145deg, #86efac, #15803d 65%, var(--navy));
+}
+
+.contact-detail-card {
+  background: linear-gradient(155deg, #fff 55%, #f4fcf6);
+}
+
+.contact-detail-card::before {
+  border-color: rgb(34 197 94 / 14%);
+}
+
+.contact-detail-card::after {
+  background: linear-gradient(90deg, #15803d, #86efac);
+}
+
+.contact-detail-card:hover {
+  border-color: var(--green-border);
+}
+
+.contact-detail-link:hover {
+  color: var(--green-dark);
+}
+
+.contact-form-section {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(34 197 94 / 9%), transparent 32%),
+    linear-gradient(180deg, #f0fdf4, #f8fbff);
+}
+
+.contact-form-card::before {
+  background: linear-gradient(90deg, #15803d, #86efac, #dcfce7);
+}
+
+.contact-field-label span {
+  color: var(--green);
+}
+
+.contact-field:hover {
+  border-color: var(--green-border);
+}
+
+.contact-field:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgb(21 128 61 / 12%);
+}
+
+.contact-submit-button {
+  background: linear-gradient(105deg, #15803d, #166534);
+  box-shadow: 0 10px 24px rgb(21 128 61 / 20%);
+}
+
+.contact-submit-button:hover {
+  background: var(--green-dark);
+  box-shadow: 0 14px 28px rgb(21 128 61 / 25%);
+}
+
+.contact-faq:hover,
+.contact-faq[open] {
+  border-color: var(--green-border);
+}
+
+.contact-faq-plus {
+  background: var(--green-pale);
+  color: var(--green-dark);
+}
+
+.contact-faq[open] .contact-faq-plus {
+  background: #dcfce7;
+}
+
+.contact-final-cta {
+  background:
+    radial-gradient(ellipse at 90% 10%, rgb(34 197 94 / 25%), transparent 38%),
+    linear-gradient(115deg, #061e35, #082a4a 60%, #0c3f70);
+}
+
+/* Home and About decorations */
+.hero-orbit-one,
+.about-decorative-shape {
+  background: #dcfce7;
+}
+
+.hero-orbit-two {
+  border-color: #ecfdf5;
+}
+
+.modern-card:hover,
+.modern-panel:hover {
+  border-color: #86efac;
+}
+
+/* Floating WhatsApp: retain WhatsApp's own green */
+.whatsapp-float,
+.services-whatsapp,
+.contact-whatsapp-float {
+  background: #25d366;
+  box-shadow: 0 10px 28px rgb(37 211 102 / 30%);
+}
+
+.services-whatsapp:hover,
+.contact-whatsapp-float:hover {
+  background: #128c43;
+}
+
+/* Keyboard focus accessibility */
+.contact-submit-button:focus-visible,
+.footer-link:focus-visible {
+  outline: 3px solid #86efac;
+  outline-offset: 3px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .services-whatsapp,
+  .contact-whatsapp-float,
+  .contact-detail-card,
+  .pricing-primary-button,
+  .contact-primary-button,
+  .contact-submit-button {
+    transition: none !important;
+  }
+}
+
+
