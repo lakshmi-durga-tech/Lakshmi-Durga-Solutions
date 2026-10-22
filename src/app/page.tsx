@@ -158,7 +158,7 @@ export default function HomePage() {
       </h2>
 
       <p className="mt-6 text-lg font-semibold leading-8 text-slate-700 sm:text-xl">
-        Virtual Operations, Creative Design & Advertising — All Under One Roof.
+        Virtual Operations, Creative Designs & Advertising — All Under One Roof.
       </p>
 
       <p className="mt-4 text-base leading-8 text-slate-600">
