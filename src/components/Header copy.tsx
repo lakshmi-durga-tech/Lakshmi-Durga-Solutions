@@ -16,7 +16,7 @@ const links = [
   { label: "Services", href: "/services-us/" },
   { label: "Pricing", href: "/price/" },
   { label: "Blog", href: "/blog/?source=agency" },
-  { label: "Connect With Us", href: "#" },
+  { label: "Connect With Us", href: "" },
 ];
 
 const contactOptions = [
