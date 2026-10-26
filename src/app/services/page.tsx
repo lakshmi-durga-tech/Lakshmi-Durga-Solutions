@@ -387,6 +387,28 @@ export default function ServicesPage() {
                 </Reveal>
               ))}
             </div>
+            <div className="relative mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {process.map(({ number, title, description, icon: Icon }) => (
+                <Reveal key={number} className="h-full">
+                  <article className="process-card h-full">
+                    <div className="flex items-center justify-between">
+                      <span className="text-sm font-black tracking-widest text-blue-200">
+                        {number}
+                      </span>
+                      <span className="grid h-11 w-11 place-items-center rounded-2xl bg-white/10 text-white">
+                        <Icon size={22} />
+                      </span>
+                    </div>
+                    <h3 className="mt-6 text-lg font-extrabold text-white">
+                      {title}
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-blue-100">
+                      {description}
+                    </p>
+                  </article>
+                </Reveal>
+              ))}
+            </div>
           </div>
         </section>
 
