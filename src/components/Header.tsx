@@ -18,7 +18,7 @@ const links = [
   { label: "For Whom We Support", href: "/industries/" },
   { label: "Pricing", href: "/pricing/" },
   { label: "Blog", href: "/blog/?source=virtual-operator" },
-  { label: "Connect With Us", href: "/#/" },
+  { label: "Connect With Us", href: "" },
 ];
 
 const contactOptions = [
