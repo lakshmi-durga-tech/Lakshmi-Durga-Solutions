@@ -9,7 +9,7 @@ const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about-us/" },
   { label: "Services", href: "/services/" },
-  { label: "Industries", href: "/industries/" },
+  { label: "For Whom We Support", href: "/industries/" },
   { label: "Pricing", href: "/pricing/" },
   { label: "Blog", href: "/blog/?source=virtual-operator" },
   { label: "Contact", href: "/contact-us/?source=virtual-operator" },
