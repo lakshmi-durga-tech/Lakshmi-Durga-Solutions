@@ -40,7 +40,7 @@ const serviceOptions = [
 const headings: Record<ContactType, string> = {
   individual: "Individual Inquiry",
   organisation: "Organisation / Office Inquiry",
-  institution: "School / College / Institution Inquiry",
+  institution: "School / College / Institution/ Coaching Centre etc... Inquiry",
 };
 
 export default function ContactInquiryForm({
@@ -55,6 +55,7 @@ export default function ContactInquiryForm({
   const [email, setEmail] = useState("");
   const [service, setService] = useState("");
   const [details, setDetails] = useState("");
+  const [phone, setPhone]=useState("");
 
   const needsOrganisation = type !== "individual";
 
@@ -71,6 +72,7 @@ export default function ContactInquiryForm({
             }: ${organisation.trim()}`,
           ]
         : []),
+      `Contact number: ${phone.trim()}`,
       `Email: ${email.trim()}`,
       `Service: ${service || "Not selected"}`,
       `Requirement details: ${details.trim()}`,
@@ -268,6 +270,33 @@ export default function ContactInquiryForm({
                   placeholder="Enter your full name"
                 />
               </div>
+              <div>
+  <label htmlFor="phone" className={labelClass}>
+    Contact number <span className="text-red-500">*</span>
+  </label>
+
+  <input
+    id="phone"
+    name="phone"
+    type="tel"
+    inputMode="numeric"
+    autoComplete="tel"
+    required
+    minLength={10}
+    maxLength={10}
+    pattern="[6-9][0-9]{9}"
+    value={phone}
+    onChange={(e) =>
+      setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))
+    }
+    className={inputClass}
+    placeholder="Enter 10-digit mobile number"
+  />
+
+  <p className="mt-2 text-xs text-slate-400">
+    Enter a valid 10-digit Indian mobile number.
+  </p>
+</div>
 
               {needsOrganisation && (
                 <div>
