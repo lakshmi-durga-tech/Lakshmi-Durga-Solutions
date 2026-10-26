@@ -222,7 +222,7 @@ export default function Header() {
                         : "text-slate-700 hover:bg-slate-50 hover:text-[#0878e8]"
                     }`}
                   >
-                    Contact
+                    Connect With Us
                     <ChevronDown
                       size={17}
                       className={`transition-transform duration-200 ${
