@@ -75,7 +75,7 @@ export default function ContactInquiryForm({
       `Contact number: ${phone.trim()}`,
       `Email: ${email.trim()}`,
       `Service: ${service || "Not selected"}`,
-      `Requirement details: ${details.trim()}`,
+      `Required Service Details: ${details.trim()}`,
     ].join("\n");
   }
 
