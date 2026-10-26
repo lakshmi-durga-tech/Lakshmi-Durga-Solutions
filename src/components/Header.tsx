@@ -130,7 +130,7 @@ export default function Header() {
                     isContactActive ? "text-[#0878e8]" : ""
                   }`}
                 >
-                  Contact With Us
+                  Connect With Us
                   <ChevronDown
                     size={15}
                     className={`transition-transform duration-200 ${
