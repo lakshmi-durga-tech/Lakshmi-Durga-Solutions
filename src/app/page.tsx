@@ -15,12 +15,12 @@ import {
 const services = [
   {
     id: "virtual-operator",
-    title: "Virtual Computer Operator",
+    title: "Virtual DTP/Graphic Designing/Computer Operations",
     subtitle: "BUSINESS & COMPUTER SUPPORT",
     description:
       "Typing, Data Entry, DTP, Graphic Design, MIS Reports, PPTs, Office & Educational Support.",
     href: "/virtual-operator/",
-    button: "Explore Virtual Operator",
+    button: "Explore",
     color: "#0878E8",
     background: "#EFF6FF",
     icon: MonitorCog,
