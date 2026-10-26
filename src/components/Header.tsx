@@ -2,6 +2,7 @@
 "use client";
 
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const links = [
@@ -12,13 +13,37 @@ const links = [
   { label: "Pricing", href: "/pricing/" },
   { label: "Blog", href: "/blog/?source=virtual-operator" },
   { label: "Contact", href: "/contact-us/?source=virtual-operator" },
-  //{ label: "Pay Online", href: "/pay-online/?source=virtual-operator" },
+  // { label: "Pay Online", href: "/pay-online/?source=virtual-operator" },
 ];
+
+function getPath(href: string) {
+  const path = href.split("?")[0];
+  return path === "/" ? "/" : path.replace(/\/+$/, "");
+}
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const closeMenu = () => setOpen(false);
+
+  const isActive = (href: string) => {
+    const targetPath = getPath(href);
+    const currentPath =
+      pathname === "/" ? "/" : pathname.replace(/\/+$/, "");
+
+    return currentPath === targetPath;
+  };
+
+  const linkClass = (href: string) =>
+    `relative py-2 text-sm font-medium transition-colors duration-200
+    after:absolute after:bottom-0 after:left-0 after:h-[2px]
+    after:bg-[#0878e8] after:transition-all after:duration-200
+    ${
+      isActive(href)
+        ? "text-[#0878e8] after:w-full"
+        : "text-slate-600 after:w-0 hover:text-[#0878e8] hover:after:w-full"
+    }`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 backdrop-blur-md">
@@ -42,7 +67,6 @@ export default function Header() {
             <span className="block text-sm font-bold tracking-tight text-[#082a4a]">
               Lakshmi Durga
             </span>
-
             <span className="mt-1 block text-xs font-medium tracking-[0.12em] text-slate-500">
               SOLUTIONS
             </span>
@@ -58,7 +82,8 @@ export default function Header() {
             <a
               key={link.label}
               href={link.href}
-              className="relative py-2 text-sm font-medium text-slate-600 transition-colors duration-200 hover:text-[#0878e8] after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-[#0878e8] after:transition-all after:duration-200 hover:after:w-full"
+              aria-current={isActive(link.href) ? "page" : undefined}
+              className={linkClass(link.href)}
             >
               {link.label}
             </a>
@@ -99,9 +124,23 @@ export default function Header() {
                 key={link.label}
                 href={link.href}
                 onClick={closeMenu}
-                className="border-b border-slate-100 px-3 py-3 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:text-[#0878e8]"
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`border-b px-3 py-3 text-sm font-medium transition-colors
+                  ${
+                    isActive(link.href)
+                      ? "border-blue-200 bg-blue-50 text-[#0878e8]"
+                      : "border-slate-100 text-slate-700 hover:bg-slate-50 hover:text-[#0878e8]"
+                  }`}
               >
-                {link.label}
+                <span className="flex items-center justify-between">
+                  {link.label}
+                  {isActive(link.href) && (
+                    <span
+                      className="ml-3 h-[2px] w-6 bg-[#0878e8]"
+                      aria-hidden="true"
+                    />
+                  )}
+                </span>
               </a>
             ))}
 
