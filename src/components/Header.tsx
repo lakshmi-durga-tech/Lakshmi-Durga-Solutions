@@ -208,7 +208,7 @@ export default function Header() {
         >
           <div className="mx-auto grid max-w-7xl gap-1">
             {links.map((link) =>
-              link.label === "Connect with Us" ? (
+              link.label === "Connect With Us" ? (
                 <div key={link.label} className="border-b border-slate-100">
                   <button
                     type="button"
