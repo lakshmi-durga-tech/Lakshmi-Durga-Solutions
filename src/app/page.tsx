@@ -15,12 +15,12 @@ import {
 const services = [
   {
     id: "virtual-operator",
-    title: "Virtual Computer Operator",
+    title: "Virtual DTP/Graphic Designing/Computer Operations",
     subtitle: "BUSINESS & COMPUTER SUPPORT",
     description:
       "Typing, Data Entry, DTP, Graphic Design, MIS Reports, PPTs, Office & Educational Support.",
     href: "/virtual-operator/",
-    button: "Explore Virtual Operator",
+    button: "Explore",
     color: "#0878E8",
     background: "#EFF6FF",
     icon: MonitorCog,
@@ -158,7 +158,7 @@ export default function HomePage() {
       </h2>
 
       <p className="mt-6 text-lg font-semibold leading-8 text-slate-700 sm:text-xl">
-        Virtual Operations, Creative Design & Advertising — All Under One Roof.
+        Virtual Operations, Creative Designs & Advertising — All Under One Roof.
       </p>
 
       <p className="mt-4 text-base leading-8 text-slate-600">
