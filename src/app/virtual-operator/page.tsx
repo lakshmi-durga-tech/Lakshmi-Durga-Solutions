@@ -579,9 +579,7 @@ export default function Home() {
               <li>
                 <Link href="/about-us/" className="footer-link">About Us</Link>
               </li>
-              <li>
-                <Link href="/services/" className="footer-link">Services</Link>
-              </li>
+              
               <li>
                 <Link href="/ad-agency/" className="footer-link">Ad Agency</Link>
               </li>
