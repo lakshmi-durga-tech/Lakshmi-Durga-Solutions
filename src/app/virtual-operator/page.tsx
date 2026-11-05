@@ -276,28 +276,6 @@ export default function Home() {
                 institutions, offices, and businesses.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-3">
-                <a
-                  href={getWhatsAppLink("General Enquiry")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#0878e8] px-6 py-3.5 font-bold text-white shadow-lg shadow-blue-600/20 transition duration-300 hover:-translate-y-1 hover:bg-[#0668ca] hover:shadow-xl"
-                >
-                  Get a Quote
-                  <ArrowRight
-                    size={18}
-                    className="transition-transform group-hover:translate-x-1"
-                  />
-                </a>
-
-                <Link
-                  href="/contact-us/"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-6 py-3.5 font-bold text-[#082a4a] shadow-sm transition duration-300 hover:-translate-y-1 hover:border-blue-300 hover:bg-blue-50"
-                >
-                  Contact Us
-                </Link>
-              </div>
-
               <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-slate-600">
                 <span className="flex items-center gap-2">
                   <span className="grid h-6 w-6 place-items-center rounded-full bg-blue-100 text-[#0878e8]">
@@ -433,6 +411,7 @@ export default function Home() {
             <div className="grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => {
                 const Icon = service.icon;
+
                 const isAdAgency =
                   service.title === "Advertising & Media Agency";
 
@@ -441,7 +420,7 @@ export default function Home() {
                 return (
                   <article
                     key={service.number}
-                    className="service-card group h-full"
+                    className="service-card group"
                   >
                     <div
                       className={`service-image-wrap ${service.shape}`}
@@ -462,7 +441,8 @@ export default function Home() {
                       </span>
                     </div>
 
-                    <div className="flex h-full flex-col px-1 pb-2 pt-6">
+                    {/* SERVICE CONTENT */}
+                    <div className="px-1 pb-2 pt-6">
                       <h3 className="text-xl font-extrabold tracking-tight text-[#082a4a] transition-colors group-hover:text-[#0878e8]">
                         {service.title}
                       </h3>
@@ -490,16 +470,17 @@ export default function Home() {
                         ))}
                       </ul>
 
-                      <div className="mt-auto pt-6">
+                      {/* SERVICE BUTTON - NO EXTRA GAP */}
+                      <div className="mt-4">
                         {isAdAgency ? (
                           <Link
                             href="/ad-agency/"
-                            aria-label="Explore Advertising and Media Agency services"
+                            aria-label="View Advertising and Media Agency services"
                             className="service-link inline-flex w-full items-center justify-between gap-2 border-t border-slate-200 pt-4 text-sm font-bold text-[#0878e8] transition-colors hover:text-[#075bb0]"
                           >
                             <span className="inline-flex items-center gap-2">
                               <Megaphone size={17} />
-                              Explore Ad Agency
+                              Click Here
                             </span>
 
                             <ArrowRight
@@ -512,12 +493,12 @@ export default function Home() {
                             href={whatsappLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            aria-label={`Discuss ${service.title} on WhatsApp`}
+                            aria-label={`Enquire about ${service.title} on WhatsApp`}
                             className="service-link inline-flex w-full items-center justify-between gap-2 border-t border-slate-200 pt-4 text-sm font-bold text-[#0878e8] transition-colors hover:text-[#075bb0]"
                           >
                             <span className="inline-flex items-center gap-2">
                               <MessageCircle size={17} />
-                              Discuss This Service
+                              Click Here
                             </span>
 
                             <ArrowRight
@@ -574,20 +555,29 @@ export default function Home() {
 
             <ul className="mt-5 space-y-3 text-sm text-slate-300">
               <li>
-                <Link href="/" className="footer-link">Home</Link>
+                <Link href="/" className="footer-link">
+                  Home
+                </Link>
               </li>
               <li>
-                <Link href="/about-us/" className="footer-link">About Us</Link>
-              </li>
-              
-              <li>
-                <Link href="/ad-agency/" className="footer-link">Ad Agency</Link>
+                <Link href="/about-us/" className="footer-link">
+                  About Us
+                </Link>
               </li>
               <li>
-                <Link href="/blog/" className="footer-link">Blog</Link>
+                <Link href="/ad-agency/" className="footer-link">
+                  Ad Agency
+                </Link>
               </li>
               <li>
-                <Link href="/pricing/" className="footer-link">Pricing</Link>
+                <Link href="/blog/" className="footer-link">
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing/" className="footer-link">
+                  Pricing
+                </Link>
               </li>
             </ul>
           </div>
@@ -597,10 +587,14 @@ export default function Home() {
 
             <ul className="mt-5 space-y-3 text-sm text-slate-300">
               <li>
-                <Link href="/contact-us/" className="footer-link">Contact Us</Link>
+                <Link href="/contact-us/" className="footer-link">
+                  Contact Us
+                </Link>
               </li>
               <li>
-                <Link href="/privacy-policy/" className="footer-link">Privacy Policy</Link>
+                <Link href="/privacy-policy/" className="footer-link">
+                  Privacy Policy
+                </Link>
               </li>
               <li>
                 <Link href="/terms-and-conditions/" className="footer-link">
