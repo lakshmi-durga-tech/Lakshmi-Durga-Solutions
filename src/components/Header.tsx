@@ -14,7 +14,6 @@ import {
 const links = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about-us/" },
-  { label: "Services", href: "/services/" },
   { label: "For Whom We Support", href: "/industries/" },
   { label: "Pricing", href: "/pricing/" },
   { label: "Blog", href: "/blog/?source=virtual-operator" },
