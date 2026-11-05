@@ -482,14 +482,6 @@ function BlogContent() {
                 </Link>
               </li>
               <li>
-                <Link
-                  href={isAgency ? "/services-us/" : "/services/"}
-                  className="footer-link"
-                >
-                  Services
-                </Link>
-              </li>
-              <li>
                 <Link href={`/blog/${sourceQuery}`} className="footer-link">
                   Blog
                 </Link>
