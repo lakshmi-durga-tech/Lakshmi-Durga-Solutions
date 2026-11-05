@@ -501,14 +501,7 @@ export default function AboutPage() {
                 >
                   Pricing
                 </a>
-
-                <a
-                  href="/services-us/"
-                  className="transition hover:text-[#0878E8]"
-                >
-                  Services
-                </a>
-
+                
                 <a
                   href="/about/"
                   className="transition hover:text-[#0878E8]"
