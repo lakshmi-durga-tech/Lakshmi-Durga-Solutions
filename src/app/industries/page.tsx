@@ -622,9 +622,6 @@ export default function IndustriesPage() {
           <Link href="/about-us/" className="footer-link">About Us</Link>
         </li>
         <li>
-          <Link href="/services/" className="footer-link">Services</Link>
-        </li>
-        <li>
           <Link href="/blog/" className="footer-link">Blog</Link>
         </li>
         <li>
