@@ -658,7 +658,6 @@ export default function PricingPage() {
               <ul className="mt-5 space-y-3 text-sm text-slate-300">
                 <li><Link href="/" className="footer-link">Home</Link></li>
                 <li><Link href="/about-us/" className="footer-link">About Us</Link></li>
-                <li><Link href="/services/" className="footer-link">Services</Link></li>
                 <li><Link href="/blog/" className="footer-link">Blog</Link></li>
                 <li><Link href="/pricing/" className="footer-link">Pricing</Link></li>
               </ul>
