@@ -65,7 +65,7 @@ export default function HomePage() {
                 Lakshmi Durga Solutions
               </h1>
               <p className="mt-1 text-[9px] font-semibold tracking-[0.13em] text-slate-500 sm:text-xs">
-                BUSINESS · DIGITAL · CREATIVE
+                VIRTUAL DTP/GRAPHIC/COMPUTER OPERATOR
               </p>
             </div>
           </Link>
@@ -147,7 +147,7 @@ export default function HomePage() {
   <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
     <div className="w-full">
       <p className="mb-5 text-xs font-bold uppercase tracking-[0.16em] text-[#0878E8] sm:text-sm">
-        Business Solutions & Creative Services
+        Need professional computer support without hiring a full-time employee?
       </p>
 
       <h2 className="text-4xl font-bold leading-[1.15] tracking-tight text-[#082A4A] sm:text-5xl lg:text-6xl">
@@ -162,9 +162,7 @@ export default function HomePage() {
       </p>
 
       <p className="mt-4 text-base leading-8 text-slate-600">
-        From computer-based business support to creative advertising,
-        discover practical services designed to help you manage work
-        and present your business professionally.
+        We provide Virtual Computer Operator, Typing, DTP, Graphic Designing, Data Entry, Excel, Documentation, MIS Reports and Academic Support services.
       </p>
     </div>
   </div>
